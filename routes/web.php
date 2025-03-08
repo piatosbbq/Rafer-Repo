@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TaskController;
+use App\Services\ProductService;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Services\UserService;
+
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Response;
 
@@ -12,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-//Exercise 1
+//Exercise 2
 
 // Service Container
 Route::get('/test-container', function (Request $request) {
@@ -35,7 +39,7 @@ Route::get('/test-facades', function (UserService $userService) {
 });
 
 
-//Exercise 2
+//Exercise 3
 
 //Routing -> Parameters
 Route::get('/post/{post}/comment/{comment}', function(string $postId, string $comment){
@@ -81,5 +85,16 @@ Route::post('/token', function(Request $request){
     return $request->all();
 });
 
+// Exercise 4
+//Controller -> Middleware
+Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
 
+//Resource
+Route::resource('products', ProductController::class);
+
+// View with data
+Route::get('/product-list', function(ProductService $productService){
+    $data['products'] = $productService->listProducts();
+    return view('products.list', $data);
+});
 

@@ -19,6 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->share(key: 'sharedVariable', value: 'I am a shared variable form AppServiceProvider');
     }
 }
