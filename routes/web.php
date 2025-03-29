@@ -11,9 +11,14 @@ use App\Services\UserService;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Response;
 
+// Welcome
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['name' => 'rafer-app']);
 });
+// Users
+Route::get('/users', [UserController::class, 'index']);
+// Products
+Route::resource('products', ProductController::class);
 
 
 //Exercise 2
@@ -87,10 +92,10 @@ Route::post('/token', function(Request $request){
 
 // Exercise 4
 //Controller -> Middleware
-Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
+// Route::get('/users', [UserController::class, 'index'])->middleware('user-middleware');
 
 //Resource
-Route::resource('products', ProductController::class);
+// Route::resource('products', ProductController::class);
 
 // View with data
 Route::get('/product-list', function(ProductService $productService){

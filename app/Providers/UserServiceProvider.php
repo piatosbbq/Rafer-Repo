@@ -17,32 +17,32 @@ class UserServiceProvider extends ServiceProvider
             $users = [
                 [
                     'id' => 2201010,
-                    'name ' => 'John Doe',
+                    'name' => 'John Doe',
                     'gender' => 'male'
                 ],
                 [
                     'id' => 2201011,
-                    'name ' => 'Britney Rafer',
+                    'name' => 'Britney Rafer',
                     'gender' => 'female'
                 ],
                 [
                     'id' => 2201012,
-                    'name ' => 'Jane Doe',
+                    'name' => 'Jane Doe',
                     'gender' => 'female'
                 ],
                 [
                     'id' => 2201013,
-                    'name ' => 'Mariel Perin',
+                    'name' => 'Mariel Perin',
                     'gender' => 'female'
                 ],
                 [
                     'id' => 2201014,
-                    'name ' => 'Francis Luis',
+                    'name' => 'Francis Luis',
                     'gender' => 'male'
                 ],
                 [
                     'id' => 2201015,
-                    'name ' => 'Christian Azarcon',
+                    'name' => 'Christian Azarcon',
                     'gender' => 'male'
                 ],
             ];

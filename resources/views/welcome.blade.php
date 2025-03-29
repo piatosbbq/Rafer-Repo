@@ -1,4 +1,5 @@
-hello
-
-
-britney rafer ng bscs3a
+<x-layout>
+    <x-slot:heading>
+        <h1>Welcome to {{ $name }}</h1>
+    </x-slot>
+</x-layout>
